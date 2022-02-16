@@ -1,0 +1,97 @@
+{
+  "version": 4,
+  "terraform_version": "0.12.26",
+  "serial": 0,
+  "lineage": "b406d971-efdf-d39a-ad31-af1d7e4e10a0",
+  "outputs": {
+    "cluster_instance_endpoints": {
+      "value": [
+        null
+      ],
+      "type": [
+        "tuple",
+        [
+          "dynamic"
+        ]
+      ]
+    }
+  },
+  "resources": [
+    {
+      "mode": "data",
+      "type": "aws_caller_identity",
+      "name": "current",
+      "provider": "provider.aws",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "account_id": "77777777777",
+            "arn": "arn:aws:iam::77777777777:user/myenv-automation",
+            "id": "77777777777",
+            "user_id": "AIDA3CNSARQO3KCHI7JAI"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_db_subnet_group",
+      "name": "resource_db_subnet",
+      "provider": "provider.aws",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:rds:eu-west-1:77777777777:subgrp:myapp-pg-nnmzvdawtpvvmzq-subnet-group",
+            "description": "Managed by Terraform",
+            "id": "myapp-pg-nnmzvdawtpvvmzq-subnet-group",
+            "name": "myapp-pg-nnmzvdawtpvvmzq-subnet-group",
+            "name_prefix": null,
+            "subnet_ids": [
+              "subnet-02d306f1e93f4a654",
+              "subnet-08ad6d4de9aeec1c3",
+              "subnet-0ba2b3a2aefcc37b4"
+            ],
+            "tags": {
+              "Name": "myapp-pg-nnmzvdawtpvvmzq-subnet-group",
+              "cicd-component": "none",
+              "cicd-costcenter": "9600",
+              "cicd-environment": "myenv",
+              "cicd-monitored": "false",
+              "cicd-offering": "RiskIntelligence",
+              "cicd-resource": "ModelDBServer",
+              "cicd-service": "myapp",
+              "cicd-tenantid": "Shared"
+            }
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_rds_cluster_endpoint",
+      "name": "read_all",
+      "each": "list",
+      "provider": "provider.aws",
+      "instances": []
+    },
+    {
+      "mode": "managed",
+      "type": "aws_rds_cluster_instance",
+      "name": "cluster_instances",
+      "each": "list",
+      "provider": "provider.aws",
+      "instances": []
+    },
+    {
+      "mode": "managed",
+      "type": "aws_rds_cluster_parameter_group",
+      "name": "cluster",
+      "each": "list",
+      "provider": "provider.aws",
+      "instances": []
+    }
+  ]
+}
